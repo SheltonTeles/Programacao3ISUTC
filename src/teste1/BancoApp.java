@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 public class BancoApp extends JFrame implements ActionListener{
 	public static final String user = "admin", senha = "0000";
 	
@@ -12,7 +13,7 @@ public class BancoApp extends JFrame implements ActionListener{
 	private JLabel lb_nome, lb_senha, lb_image;
 	private JTextField tf_nome;
 	private JPasswordField tf_password;
-	private JFrame frame_Conta;
+	
 
 	BancoApp() {
 
