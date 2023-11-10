@@ -40,22 +40,23 @@ public class Conta {
 	}
 
 	//Method to withdraw money
-	private double levantar(double valor) {
+	double levantar(double valor) {
 
 		if (valor >= saldo) 
 			//			JOptionPane.showMessageDialog(null, "Saldo insuficiente");
 			return -1;
-
+		
 		else 
 			saldo -= valor;
-
+		levantamentos =levantamentos+1;
 		return 1;
 
 	}
 
+	
 
 	//method to deposit money
-	private void depositar(double valor) {
+	void depositar(double valor) {
 
 		saldo += valor;
 		JOptionPane.showMessageDialog(null, "Depósito feito com sucesso.\n Novo saldo: "+saldo);
