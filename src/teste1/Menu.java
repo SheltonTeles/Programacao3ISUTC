@@ -1,8 +1,10 @@
-package bancoAPP;
+package teste1;
 import javax.swing.*;
+
+import teste1.*;
+
 import java.awt.*;
 import java.awt.event.*;
-import bancoAPP.*;
 
 public class Menu extends JFrame implements ActionListener{
 	private JButton bt_extracto, bt_levantamento, bt_depositar, bt_sair;
