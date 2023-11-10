@@ -2,6 +2,7 @@ package teste1;
 
 import javax.swing.JOptionPane;
 import java.util.Vector;
+import teste1.*;
 
 public class Conta {
 	//atributes
