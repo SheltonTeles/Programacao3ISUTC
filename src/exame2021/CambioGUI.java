@@ -17,67 +17,48 @@ public class CambioGUI extends JFrame implements ActionListener{
 	private JTextField tf_valorMoeda, tf_moeda, tf_cambio;
 	private JButton bt_converter;
 	private JComboBox optionsMoedas;
-	private JPanel panel1, panel2;
+	private JPanel panel1;
 
 	String moedas []= {"USD", "EUR","ZAR"};
 
 
 	public CambioGUI (){
 		this.setTitle("Conversão para metical: ");
-		this.setSize(520, 200);
+		this.setSize(920, 180);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		panel1 = new JPanel();
-//		JSeparator sep = new JSeparator(); 
-//		sep.setPreferredSize(getPreferredSize());
-
-		panel2 = new JPanel();
-		panel1.setLayout(new GridLayout(0, 2, 2, 4));
-
-		panel2.setLayout(new GridLayout(0, 2, 2, 4));
-		this.add(panel1);
-		
-		this.add(panel2);
+		panel1.setLayout(new GridLayout(2, 0, 0, 8));
 		this.setLayout(new FlowLayout());
 
-		labelValorMoeda = new JLabel("Valor em moeda");
-		this.add(labelValorMoeda);
+		labelValorMoeda = new JLabel("Valor em moeda",0);
 
 		tf_valorMoeda = new JTextField(20);
-		this.add(tf_valorMoeda);
 
-		labelMoeda = new JLabel("Moeda: ");
-		this.add(labelMoeda);
+		labelMoeda = new JLabel("Moeda",0);
 		optionsMoedas = new JComboBox (moedas);
-		this.add(optionsMoedas);
+		optionsMoedas.addActionListener(this);
 
-		labelValorMT = new JLabel("Valor em MT: ");
-		this.add(labelValorMT);
-		
+		labelValorMT = new JLabel("Valor em MT",0);
 		tf_moeda = new JTextField(20);
-		this.add(tf_moeda);
 
-		labelCambio = new JLabel("Câmbio: ");
-		this.add(labelCambio);
-
-
+		labelCambio = new JLabel("Câmbio",0);
 		tf_cambio = new JTextField(8);
-		this.add(tf_cambio);
+		tf_cambio.setEditable(false);
+		
+		this.add(panel1);
 		panel1.add(labelValorMoeda);
 		panel1.add(tf_valorMoeda);
 		panel1.add(labelMoeda);
 		panel1.add(optionsMoedas);
-
 		
-		
-		panel2.add(labelValorMT);
-		panel2.add(tf_moeda);
-		panel2.add(labelCambio);
-		panel2.add(tf_cambio);
+		panel1.add(labelValorMT);
+		panel1.add(tf_moeda);
+		panel1.add(labelCambio);
+		panel1.add(tf_cambio);
 
 		bt_converter = new JButton("Converter");
+		bt_converter.addActionListener(this);
 		this.add(bt_converter);
-		
-		
 
 		this.setVisible(true);
 
@@ -87,6 +68,15 @@ public class CambioGUI extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
+		if(e.getSource() == optionsMoedas) {
+			
+			
+		}
+		
+		if(e.getSource() == bt_converter) {
+			
+		}
 
 	}
 
