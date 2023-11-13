@@ -35,7 +35,7 @@ public class CriarConta extends JFrame implements ActionListener{
 
 		this.setLayout(new FlowLayout());
 		jp_form.setLayout(new GridLayout(2,2,2,2));
-		jp_buttons.setLayout(new GridLayout(0,2,2,2));
+		jp_buttons.setLayout(new GridLayout(1,2,2,2));
 
 		bt_entrar = new JButton("Submeter");
 		bt_entrar.addActionListener(this);
