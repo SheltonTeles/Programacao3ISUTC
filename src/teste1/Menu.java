@@ -66,7 +66,7 @@ public class Menu extends JFrame implements ActionListener{
 		bt_depositar.addActionListener(this);
 		jp_buttons.add(bt_depositar);
 
-		this.add(jp_imagem,"North");
+		this.add(jp_imagem);
 		this.add(jp_buttons);
 
 		this.setVisible(true);

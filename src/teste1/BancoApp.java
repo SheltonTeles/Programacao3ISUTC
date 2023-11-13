@@ -12,7 +12,7 @@ public class BancoApp extends JFrame implements ActionListener{
 	private JLabel lb_nome, lb_senha, lb_image;
 	private JTextField tf_nome;
 	private JPasswordField tf_password;
-	private JFrame frame_Conta;
+//	private JFrame frame_Conta;
 
 	BancoApp() {
 
