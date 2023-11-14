@@ -26,9 +26,9 @@ public class CambioGUI extends JFrame implements ActionListener{
 
 	private JLabel labelValorMoeda, labelMoeda, labelValorMT, labelCambio;
 	private JTextField tf_valorMoeda, tf_moeda, tf_cambio;
-	private JButton bt_converter, ver_historico;
+	private JButton bt_converter, ver_historico, bt_apagar;
 	private JComboBox optionsMoedas;
-	private JPanel panel1;
+	private JPanel panel1, panelButtons;
 
 	String moedas []= {"USD", "EUR","ZAR"};
 
@@ -38,10 +38,13 @@ public class CambioGUI extends JFrame implements ActionListener{
 		this.setSize(920, 180);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		panel1 = new JPanel();
+		panelButtons = new JPanel();
 		panel1.setLayout(new GridLayout(2, 0, 0, 8));
+		panelButtons.setLayout(new GridLayout(1,3,8,8));
 		this.setLayout(new FlowLayout());
+		Color color = new Color(255, 255, 255);
 
-		labelValorMoeda = new JLabel("Valor em moeda",0);
+		labelValorMoeda = new JLabel("Valor em moeda",0);//o zero fez com que a label e o tf ficassem proximos um do outro
 
 		tf_valorMoeda = new JTextField(20);
 
@@ -51,13 +54,16 @@ public class CambioGUI extends JFrame implements ActionListener{
 
 		labelValorMT = new JLabel("Valor em MT",0);
 		tf_moeda = new JTextField(20);
+		tf_moeda.setBackground(color);
 		tf_moeda.setEditable(false);
 
 		labelCambio = new JLabel("Câmbio",0);
 		tf_cambio = new JTextField(8);
+		tf_cambio.setBackground(color);
 		tf_cambio.setEditable(false);
 
 		this.add(panel1);
+		this.add(panelButtons);
 		panel1.add(labelValorMoeda);
 		panel1.add(tf_valorMoeda);
 		panel1.add(labelMoeda);
@@ -67,12 +73,19 @@ public class CambioGUI extends JFrame implements ActionListener{
 		panel1.add(tf_moeda);
 		panel1.add(labelCambio);
 		panel1.add(tf_cambio);
+		
+		
 
 		bt_converter = new JButton("Converter");
 		ver_historico = new JButton("Historico");
+		bt_apagar = new JButton ("Apagar");
+		
 		bt_converter.addActionListener(this);
-		this.add(bt_converter);
-		this.add(ver_historico);
+		ver_historico.addActionListener(this);
+		bt_apagar.addActionListener(this);
+		panelButtons.add(bt_converter);
+		panelButtons.add(ver_historico);
+		panelButtons.add(bt_apagar);
 
 		this.setVisible(true);
 
@@ -123,6 +136,8 @@ public class CambioGUI extends JFrame implements ActionListener{
 		}
 
 	}
+	
+	
 
 
 	public static void main(String[] args) {new CambioGUI();}
