@@ -1,7 +1,6 @@
 package exame2021;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 import exame2021.*;
@@ -26,8 +25,6 @@ public class Menu extends JFrame implements ActionListener{
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
-
 		jp_buttons = new JPanel();
 		jp_buttons.setLayout(new GridLayout(3,1,5,3));
 		jp_imagem = new JPanel();
@@ -40,7 +37,6 @@ public class Menu extends JFrame implements ActionListener{
 		jmb = new JMenuBar();
 		jmb.add(Menu); // Adicione o menu principal à barra de menus
 
-		// Adicione o Sobre ao menu principal
 		
 		itemConversor = new JMenuItem("Conversor");
 		itemConversor.addActionListener(this);
@@ -75,12 +71,13 @@ public class Menu extends JFrame implements ActionListener{
 			
 			this.setVisible(false);
 			CambioGUI c = new CambioGUI();
-			c.setVisible(true);
+			c.dispose();
 		}
 
 		if(e.getSource() == itemSobre) {
 			//implementar funcionalidades
 			JOptionPane.showMessageDialog(this, p.toString());
+			
 		}
 
 

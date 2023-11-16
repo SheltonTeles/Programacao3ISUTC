@@ -1,7 +1,6 @@
 package exame2021;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -113,16 +112,8 @@ public class CambioGUI extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
-		//		if(e.getSource() == optionsMoedas) {
-		//			
-		//			
-		//		}
 
 		valorInserido = Double.parseDouble(tf_valorMoeda.getText());
-
-
 
 		switch(optionsMoedas.getSelectedItem().toString()) {
 		case "USD":
@@ -142,14 +133,11 @@ public class CambioGUI extends JFrame implements ActionListener{
 		}
 
 
-
 		if(e.getSource() == bt_converter) {
 
 			tf_moeda.setText(valorConvertido+"MT");
 
 		}
-
-	
 
 	}
 	

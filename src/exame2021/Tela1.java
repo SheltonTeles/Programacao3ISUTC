@@ -30,13 +30,11 @@ public class Tela1 extends JFrame implements ActionListener {
 		panelButtons = new JPanel();
 		panelButtons.setLayout(new GridLayout());
 
-
 		labelNome = new JLabel("Nome");
 		tf_nome = new JTextField(10);
 
 		labelApelido = new JLabel("Apelido");
 		tf_apelido = new JTextField(10);
-
 
 		btSubmeter = new JButton ("Submeter");
 		btSubmeter.addActionListener(this);
@@ -57,15 +55,6 @@ public class Tela1 extends JFrame implements ActionListener {
 
 		this.setVisible(true);
 	}
-
-
-
-
-
-
-
-
-
 
 
 	@Override
