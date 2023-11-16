@@ -11,9 +11,10 @@ public class BancoApp extends JFrame implements ActionListener{
 	private JPanel jp_form, jp_buttons, jp_Image;
 	private JLabel lb_nome, lb_senha, lb_image;
 	private JTextField tf_nome;
+//	private JFrame frame;
 	private JPasswordField tf_password;
 //	private JFrame frame_Conta;
-
+	
 	BancoApp() {
 
 		this.setTitle("LOGIN");// title 
@@ -22,7 +23,7 @@ public class BancoApp extends JFrame implements ActionListener{
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		ImageIcon icon = new ImageIcon("New Folder/autenticacao.png");
+		ImageIcon icon = new ImageIcon("assets/autenticacao.png");
 		int larguraDesejada = 40;
 		int alturaDesejada = 40;
 		Image imagemRedimensionada = icon.getImage().getScaledInstance(larguraDesejada, alturaDesejada, Image.SCALE_SMOOTH);
@@ -67,7 +68,7 @@ public class BancoApp extends JFrame implements ActionListener{
 	}
 
 	//Methods
-	public static void main(String[] args) {new BancoApp();}
+//	public static void main(String[] args) {new BancoApp();}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

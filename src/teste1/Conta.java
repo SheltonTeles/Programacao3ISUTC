@@ -48,7 +48,7 @@ public class Conta {
 			return -1;
 		
 		else 
-			saldo -= valor;
+			saldo -= valor;//saldo = saldo -valor;
 		levantamentos =levantamentos+1;
 		return 1;
 
@@ -59,8 +59,8 @@ public class Conta {
 	//method to deposit money
 	void depositar(double valor) {
 
-		saldo += valor;
-		JOptionPane.showMessageDialog(null, "Depósito feito com sucesso.\n Novo saldo: "+saldo);
+		saldo += valor;//saldo = salod + 
+//		JOptionPane.showMessageDialog(null, "Depósito feito com sucesso.\n Novo saldo: "+saldo);
 	}
 
 

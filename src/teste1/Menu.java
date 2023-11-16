@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Menu extends JFrame implements ActionListener{
-	private JButton bt_extracto, bt_levantamento, bt_depositar, bt_sair;
+	private JButton bt_extracto, bt_levantamento, bt_depositar;
 	private JPanel jp_buttons, jp_imagem;
 	private ImageIcon imageBanner;
 	private JLabel lb_imagem;
@@ -40,8 +40,8 @@ public class Menu extends JFrame implements ActionListener{
 		jmb.add(menu1); // Adicione o menu principal à barra de menus
 
 		// Adicione o submenu ao menu principal
-		submenu = new JMenu("Submenu");
 		items1 = new JMenuItem("Ficheiro");
+		submenu = new JMenu("Submenu");
 		item_sair = new JMenuItem("Sair");
 		item_sair.addActionListener(this);
 		submenu.add(item_sair);
@@ -110,7 +110,7 @@ public class Menu extends JFrame implements ActionListener{
 
 
 		if(e.getSource() == bt_depositar) {
-
+		
 			String valorADepositarString = JOptionPane.showInputDialog(this, "Insira o valor a ser depositado:");
 			if (valorADepositarString != null) {
 				try {
@@ -132,14 +132,13 @@ public class Menu extends JFrame implements ActionListener{
 		if (e.getSource() == item_sair) {
 
 			this.dispose();
+		
 		}
 
 	}
 	
 	
-	private void gravarNaBD() {
-		
-	}
+
 
 
 
