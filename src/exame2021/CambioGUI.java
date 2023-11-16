@@ -30,6 +30,7 @@ public class CambioGUI extends JFrame implements ActionListener{
 	private JButton bt_converter, ver_historico, bt_apagar;
 	private JComboBox optionsMoedas;
 	private JPanel panel1, panelButtons;
+	private Pessoa p;
 
 	String moedas []= {"USD", "EUR","ZAR"};
 
@@ -148,19 +149,8 @@ public class CambioGUI extends JFrame implements ActionListener{
 
 		}
 
-		if(e.getSource() == ver_historico) {
-			
-			new Historico();
-		}
+	
 
 	}
 	
-	
-
-
-	public static void main(String[] args) {
-	CambioGUI c= new CambioGUI();
-		c.setVisible(true);
-		
-	}
 }
