@@ -1,10 +1,11 @@
 package exame2021epoca1;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
+import java.util.Vector;
+import exame2021epoca1.Estudante;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,7 +21,7 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 	private JPanel panelWest, panelEast, panelCenter;
 	private ImageIcon imageProfile, imageCarregar;
 	private JFileChooser jf;
-
+	private Vector estudantes;
 
 	public TeladeRegistro() {
 		//		Obrigatório
@@ -35,8 +36,11 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 		panelWest = new JPanel();
 		panelWest.setLayout(new GridLayout(3, 1, 5, 3));
 		btNovoRegistro = new JButton("Novo Resgistro");
+		btNovoRegistro.addActionListener(this);
 		btLista = new JButton("Lista");
+		btLista.addActionListener(this);
 		btSobre = new JButton("Sobre");
+		btSobre.addActionListener(this);
 		panelWest.add(btNovoRegistro);
 		panelWest.add(btLista);
 		panelWest.add(btSobre);
@@ -59,7 +63,6 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 		panelEast.add(lbImagem);
 		panelEast.add(btCarregar);
 		//		Panel East end
-
 
 
 		//		Panel Center start
@@ -89,14 +92,12 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 		//		PanelCenter end
 
 
-		
-		
 		//		Adição dos componentes da tela
 		this.add(panelWest, "West");
 		this.add(panelEast,"East");
 		this.add(panelCenter,"Center");
 		//		Adição dos componentes da tela
-		
+
 		this.setVisible(true);
 	}
 
@@ -108,34 +109,54 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 		if(e.getSource() == btNovoRegistro) {
 			tfNome.setText("");
 			tfIdade.setText("");
+			group.clearSelection();
 		}
-		
-		if(e.getSource() == btLista) {
-			
-		}
-		
-		if(e.getSource() == btSobre) {
-			
-		}
-		
-		if(e.getSource() == btGravar) {
-			
-		}
-		
-		
-		if(e.getSource() == btCarregar) {
-			jf.showOpenDialog(null);
-			ImageIcon newImage = new ImageIcon(jf.getSelectedFile().getAbsolutePath());
-			lbImagem.setIcon(newImage);
-			lbImagem.updateUI();
-		}
-		
-		
 
+		if(e.getSource() == btLista) {
+
+		}
+
+		if(e.getSource() == btSobre) {
+			JOptionPane.showMessageDialog(this, "Shelton Teles Uamusse");
+		}
+
+		if(e.getSource() == btGravar) {
+
+
+		}
+
+
+		if(e.getSource() == btCarregar) {
+			
+			while(carregarImagem()!=1) {
+				carregarImagem();
+			}
+		}
+
+	}
+	
+	
+	public int carregarImagem() {
+		
+		jf.showOpenDialog(null);
+		try {
+			ImageIcon newImage = new ImageIcon(jf.getSelectedFile().getAbsolutePath());
+			int larguraDesejada = 280;
+			int alturaDesejada = 280;
+			Image imagemRedimensionada = newImage.getImage().getScaledInstance(larguraDesejada, alturaDesejada, Image.SCALE_SMOOTH);
+			ImageIcon novoIcon = new ImageIcon(imagemRedimensionada);
+			lbImagem.setIcon(novoIcon);
+			lbImagem.updateUI();
+		}catch (NullPointerException ex){
+			JOptionPane.showMessageDialog(this, "Selecione uma imagem");
+			carregarImagem();
+		}
+		return 1;
+		
 	}
 
 
