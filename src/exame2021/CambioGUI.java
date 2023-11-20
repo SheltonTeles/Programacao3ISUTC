@@ -87,8 +87,6 @@ public class CambioGUI extends JFrame implements ActionListener{
 		panel1.add(labelCambio);
 		panel1.add(tf_cambio);
 		
-		
-		
 
 		bt_converter = new JButton("Converter");
 		bt_converter.setFont(font);
@@ -105,10 +103,7 @@ public class CambioGUI extends JFrame implements ActionListener{
 		panelButtons.add(ver_historico);
 		panelButtons.add(bt_apagar);
 
-		
-
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

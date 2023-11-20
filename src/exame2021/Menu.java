@@ -71,7 +71,7 @@ public class Menu extends JFrame implements ActionListener{
 			
 			this.setVisible(false);
 			CambioGUI c = new CambioGUI();
-			c.dispose();
+			c.setVisible(true);
 		}
 
 		if(e.getSource() == itemSobre) {

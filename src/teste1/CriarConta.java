@@ -22,7 +22,7 @@ public class CriarConta extends JFrame implements ActionListener{
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		ImageIcon icon = new ImageIcon("New Folder/autenticacao.png");
+		ImageIcon icon = new ImageIcon("assets/autenticacao.png");
 		int larguraDesejada = 40;
 		int alturaDesejada = 40;
 		Image imagemRedimensionada = icon.getImage().getScaledInstance(larguraDesejada, alturaDesejada, Image.SCALE_SMOOTH);
