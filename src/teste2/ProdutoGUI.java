@@ -38,11 +38,9 @@ public class ProdutoGUI extends JFrame implements ActionListener {
 		lb_quantidade = new JLabel("Quantidade:");
 
 		
-
 		tf_nome = new JTextField();
 		tf_preco = new JTextField();
 		tf_quantidade = new JTextField();
-
 		
 
 		tf_exibirTela = new JTextArea();
