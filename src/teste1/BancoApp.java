@@ -11,9 +11,7 @@ public class BancoApp extends JFrame implements ActionListener{
 	private JPanel jp_form, jp_buttons, jp_Image;
 	private JLabel lb_nome, lb_senha, lb_image;
 	private JTextField tf_nome;
-//	private JFrame frame;
 	private JPasswordField tf_password;
-//	private JFrame frame_Conta;
 	
 	BancoApp() {
 
