@@ -81,7 +81,7 @@ public class ProdutoGUI extends JFrame implements ActionListener {
 
 		add(panel, BorderLayout.NORTH);
 		add(new JScrollPane(tb_listagem), BorderLayout.CENTER);
-		add(new JScrollPane(tf_exibirTela), BorderLayout.SOUTH);
+//		add(new JScrollPane(tf_exibirTela), BorderLayout.SOUTH);
 
 	}
 
