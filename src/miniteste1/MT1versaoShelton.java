@@ -49,7 +49,6 @@ public class MT1versaoShelton {
 		//South End
 
 
-
 		//West Start
 		submeter = new JButton("Submeter");
 		limpar = new JButton("Limpar");
@@ -96,7 +95,7 @@ public class MT1versaoShelton {
 
 
 
-		//EAST start
+		//EAST START
 		panelEast = new JPanel();
 		panelEast.setLayout(new GridLayout(1,1));
 		areaEst = new JTextArea(10,25);
@@ -104,7 +103,7 @@ public class MT1versaoShelton {
 		scrollPaneEst = new JScrollPane(areaEst,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
 		panelEast.add(scrollPaneEst);
-		//EAST End
+		//EAST END
 
 
 
