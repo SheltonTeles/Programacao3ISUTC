@@ -29,7 +29,7 @@ public class Estudante {
 	//	Metodo to String
 	@Override
 	public String toString() {
-		return "Estudante [nome=" + nome + ", genero=" + genero + ", idade=" + idade + "]";
+		return "Estudante [nome=" + nome + ", genero=" + genero + ", idade=" + idade + "]\n";
 	}
 
 

@@ -22,8 +22,10 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 	private ImageIcon imageProfile, imageCarregar;
 	private JFileChooser jf;
 	private Vector estudantes;
+	private Estudante est;
 
 	public TeladeRegistro() {
+		estudantes = new Vector();
 		//		Obrigatório
 		this.setTitle("TELA DE REGISTRO");
 		this.setSize(800, 700);
@@ -103,8 +105,6 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 
 
 
-
-
 	//	Funcionalidade dos botões
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -118,6 +118,7 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 
 		if(e.getSource() == btLista) {
 
+			JOptionPane.showMessageDialog(null, estudantes);
 		}
 
 		if(e.getSource() == btSobre) {
@@ -125,23 +126,23 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 		}
 
 		if(e.getSource() == btGravar) {
-
-
+			String genero = null;
+			if(radioMasc.isSelected()) {
+				genero = radioMasc.getText().trim();
+			} else {
+				genero = radioFem.getText().trim();
+			}	
+			estudantes.add(new Estudante(tfNome.getText(),genero,Integer.parseInt(tfIdade.getText())));
 		}
 
-
 		if(e.getSource() == btCarregar) {
-			
 			while(carregarImagem()!=1) {
 				carregarImagem();
 			}
 		}
-
 	}
-	
-	
+
 	public int carregarImagem() {
-		
 		jf.showOpenDialog(null);
 		try {
 			ImageIcon newImage = new ImageIcon(jf.getSelectedFile().getAbsolutePath());
@@ -156,10 +157,7 @@ public class TeladeRegistro extends JFrame implements ActionListener{
 			carregarImagem();
 		}
 		return 1;
-		
 	}
-
-
 
 	public static void main(String[] args) {new TeladeRegistro();}
 }
