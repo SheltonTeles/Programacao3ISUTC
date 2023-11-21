@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/*Resolução da tela de conversão do exame de programação 3, 2021 ISUTC
+/*Resolução da tela de conversão do exame de programação 3, 2021 ISUTC, 2a epoca
  * 
  * A tela abaixo serve para converter um valor em moeda estrangeira para metical. 
  * Ao selecionar a moeda o respectivo câmbio deve ser preenchido;
@@ -95,6 +95,7 @@ public class CambioGUI extends JFrame implements ActionListener{
 		bt_apagar = new JButton ("Apagar");
 		bt_apagar.setFont(font);
 		
+//		Listeners
 		bt_converter.addActionListener(this);
 		ver_historico.addActionListener(this);
 		bt_apagar.addActionListener(this);
