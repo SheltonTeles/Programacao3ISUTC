@@ -60,7 +60,7 @@ public class TelaRegisto extends JFrame implements ActionListener {
 		
 		
 
-		this.setTitle("EXAME");// O tittulo da janela.
+		this.setTitle("Tela de registo");// O tittulo da janela.
 		this.setSize(500, 200);// Width and Height 
 		this.setLocation(100, 100);
 		this.setLocationRelativeTo(null);

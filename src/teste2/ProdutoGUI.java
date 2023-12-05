@@ -65,8 +65,6 @@ public class ProdutoGUI extends JFrame implements ActionListener {
 		panel.add(tf_preco);
 		panel.add(lb_quantidade);
 		panel.add(tf_quantidade);
-		//panel.add(lb_nota2);
-		//panel.add(tf_nota2);
 		panel.add(button_select);
 		panel.add(button_insert);
 		panel.add(button_delete);
@@ -79,7 +77,6 @@ public class ProdutoGUI extends JFrame implements ActionListener {
 
 		add(panel, BorderLayout.NORTH);
 		add(new JScrollPane(tb_listagem), BorderLayout.CENTER);
-//		add(new JScrollPane(tf_exibirTela), BorderLayout.SOUTH);
 
 	}
 

@@ -1,5 +1,7 @@
 package exame2023epoca1LECC;
 
+import java.util.ArrayList;
+
 public class Despesa {
 	
 	private String descricao, categoria, valor, data;
@@ -50,12 +52,17 @@ public class Despesa {
 	}
 	
 	public Despesa() {}
+	
+	
 
 	@Override
 	public String toString() {
 		return "Despesa [descricao=" + descricao + ", categoria=" + categoria + ", valor=" + valor + ", data=" + data
 				+ "]";
 	}
+	
+	
+	
 	
 	
 	

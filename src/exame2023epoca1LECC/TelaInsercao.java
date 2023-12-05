@@ -5,18 +5,22 @@ import java.util.Vector;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.UpdateOperation.UpdateType;
+
 
 public class TelaInsercao extends JFrame implements ActionListener {
 	private JButton bt_add, bt_view, bt_filter;
 	private JPanel panelButtons, panelTable;
 	private JTable jt_listagem;
-	//	private DefaultTableModel tm_listagemModel;
+	private DefaultTableModel tm_listagemModel;
 	private Vector temp;
 	private Despesa despesa;
 	private String[] coluna = { "Descrição", "Categoria", "Valor", "Data"};
 	TelaInsercao (Despesa despesa){
+		this.despesa = despesa;
+		temp = new Vector();
+		temp.add(despesa);
 		
-
 		this.setTitle("Gestão de Despesas Pessoais");// title 
 		this.setSize(700, 700);// Width and Height 
 		this.setLocation(100, 100);
@@ -33,6 +37,10 @@ public class TelaInsercao extends JFrame implements ActionListener {
 		bt_view.addActionListener(this);
 		bt_filter = new JButton("Filtrar por Categoria");
 		bt_filter.addActionListener(this);;
+		
+		tm_listagemModel = new DefaultTableModel();
+		
+		
 
 		if (temp != null) {
 
@@ -40,7 +48,7 @@ public class TelaInsercao extends JFrame implements ActionListener {
 			jt_listagem.setAutoCreateRowSorter(true);
 
 		} else {
-			temp = new Vector<>();
+			
 			jt_listagem = new JTable(null);
 		}
 
@@ -70,23 +78,21 @@ public class TelaInsercao extends JFrame implements ActionListener {
 
 
 
-
-
-
 	private String[][] listagem(Vector temp) {
 		//ESTA IMPLEMENTAÇÃO COLOCA TODOS OS DADOS DO VECTOR NUMA LISTA MULTIDIMENSIONAL PARA A TABELA
 		this.despesa = despesa;
-				String[][] dados = new String[temp.size()][5];
+//				String[][] dados = new String[temp.size()][5];
+		Object rowData[] = new Object[4];
 				for (int i = 0; i < temp.size(); i++) {
-						dados[i][0] = (((Despesa) temp.get(i)).getDescricao()) + "";
-						dados[i][1] = (((Despesa) temp.get(i)).getCategoria()) + "";
-						dados[i][2] = (((Despesa) temp.get(i)).getValor()) + "";
-						dados[i][3] = (((Despesa) temp.get(i)).getData()) + "";
+					rowData[i] = (((Despesa) temp.get(i)).getDescricao()) + "";
+					rowData[i] = (((Despesa) temp.get(i)).getCategoria()) + "";
+					rowData[i] = (((Despesa) temp.get(i)).getValor()) + "";
+					rowData[i] = (((Despesa) temp.get(i)).getData()) + "";
 
 						System.out.println(((Despesa) temp.get(i)).toString());
 					
 				}
-				return dados;// O CONSTRUTOR RETORNA A LISTA MULTIDIMENSIONAL
+				return (String[][]) rowData;// O CONSTRUTOR RETORNA A LISTA MULTIDIMENSIONAL
 
 			}
 
@@ -99,6 +105,7 @@ public class TelaInsercao extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource() == bt_add) {
 			new TelaRegisto();
+
 		}
 
 		if(e.getSource() == bt_view) {
