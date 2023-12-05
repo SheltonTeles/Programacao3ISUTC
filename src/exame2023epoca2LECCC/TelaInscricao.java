@@ -22,7 +22,7 @@ public class TelaInscricao extends JFrame implements ActionListener {
 	public TelaInscricao() {
 
 		this.setTitle("Panel");
-		this.setSize(760,360);
+		this.setSize(760,400);
 		this.setLocation(50,50);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new GridLayout(6,1));
@@ -34,7 +34,7 @@ public class TelaInscricao extends JFrame implements ActionListener {
 
 		//Centro da tela: nome estudante, nome curso, idade, gridlayout		
 		panel1 = new JPanel();
-		panel1.setLayout(new GridLayout(3,2,12,0));
+		panel1.setLayout(new GridLayout(3,2,1,1));
 		lb_estudante = new JLabel("Nome do estudante");
 		tf_estudante = new JTextField();
 		lb_curso = new JLabel("Nome do curso");
@@ -90,7 +90,7 @@ public class TelaInscricao extends JFrame implements ActionListener {
 
 		//panel botoes
 		panel4 = new JPanel();
-		panel4.setLayout(new GridLayout(2,3));
+		panel4.setLayout(new GridLayout(1,2));
 		labelDireitosAutor = new JLabel("==========Direitos reservados ao ISuTUC==========");
 		submeter = new JButton("Submeter");
 		submeter.addActionListener(this);
@@ -113,11 +113,7 @@ public class TelaInscricao extends JFrame implements ActionListener {
 		this.setVisible(true);
 	}
 
-
-	public static void main(String[] args) {
-		new TelaInscricao();
-	}
-
+	//Métodos
 	public int verificarIdade() throws IdadeInvalidaException {
 		int idade = Integer.parseInt(cb_idades.getSelectedItem().toString());
 
@@ -127,19 +123,19 @@ public class TelaInscricao extends JFrame implements ActionListener {
 
 		return idade;
 	}
-	
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
 		if (e.getSource() == submeter) {
-		    try {
-		        verificarIdade();
-		        JOptionPane.showMessageDialog(null, "O/A estudante " + tf_estudante.getText() + " está inscrito/a no curso " + cb_cursos.getSelectedItem().toString());
-		    } catch (IdadeInvalidaException ex) {
-		        JOptionPane.showMessageDialog(null, ex.getMessage());
-		    }
+			try {
+				verificarIdade();
+				JOptionPane.showMessageDialog(null, "O/A estudante " + tf_estudante.getText() + " está inscrito/a no curso " + cb_cursos.getSelectedItem().toString());
+			} catch (IdadeInvalidaException ex) {
+				JOptionPane.showMessageDialog(null, ex.getMessage());
+			}
 		}
 
 		if(e.getSource() == sair) {
@@ -148,8 +144,6 @@ public class TelaInscricao extends JFrame implements ActionListener {
 
 			new Autenticacao();
 		}
-
-
 
 
 	}
